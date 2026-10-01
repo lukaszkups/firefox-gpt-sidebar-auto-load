@@ -1,0 +1,52 @@
+{
+  "manifest_version": 2,
+  "name": "ChatGPT Sidebar Resume",
+  "version": "1.0.0",
+  "description": "Reopens your last ChatGPT conversation whenever the Firefox sidebar is toggled on.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "chatgpt-sidebar-resume@example.com",
+      "strict_min_version": "128.0",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    }
+  },
+  "permissions": [
+    "storage",
+    "*://chatgpt.com/*",
+    "*://www.chatgpt.com/*",
+    "*://chat.openai.com/*"
+  ],
+  "background": {
+    "persistent": true,
+    "scripts": ["lib/chat-url.js", "background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://chatgpt.com/*",
+        "*://www.chatgpt.com/*",
+        "*://chat.openai.com/*"
+      ],
+      "js": ["lib/chat-url.js", "content.js"],
+      "css": ["content.css"],
+      "run_at": "document_start",
+      "all_frames": false
+    }
+  ],
+  "browser_action": {
+    "default_title": "ChatGPT Sidebar Resume",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "32": "icons/icon-32.png",
+      "48": "icons/icon-48.png",
+      "96": "icons/icon-96.png"
+    }
+  },
+  "icons": {
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "96": "icons/icon-96.png"
+  }
+}

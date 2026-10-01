@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>ChatGPT Sidebar Resume</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header>
+      <img src="icons/icon-32.png" width="32" height="32" alt="" />
+      <div>
+        <h1>Sidebar resume</h1>
+        <p>Send the Firefox ChatGPT sidebar back to the conversation you left.</p>
+      </div>
+    </header>
+
+    <div class="row">
+      <div>
+        <p class="label" id="enabled-label">Resume last chat</p>
+        <p class="hint" id="enabled-hint">On when the sidebar opens.</p>
+      </div>
+      <button
+        id="enabled"
+        type="button"
+        role="switch"
+        aria-labelledby="enabled-label"
+        aria-describedby="enabled-hint"
+        aria-checked="true"
+      ></button>
+    </div>
+
+    <section class="card" aria-live="polite">
+      <p class="eyebrow">Last conversation</p>
+      <p id="title">None saved yet</p>
+      <p id="meta"></p>
+    </section>
+
+    <p id="notice"></p>
+
+    <button id="clear" class="text-button" type="button" disabled>Forget saved chat</button>
+
+    <details>
+      <summary>Sidebar still starts a new chat?</summary>
+      <label class="check">
+        <input id="include-tabs" type="checkbox" />
+        <span>Also resume when any ChatGPT window opens a new chat, not only the sidebar.</span>
+      </label>
+    </details>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

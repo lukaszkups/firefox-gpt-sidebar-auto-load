@@ -1,0 +1,5 @@
+/* Applied only while deciding whether to leave a new-chat page.
+   Keeps the blank ChatGPT screen from flashing in the sidebar. */
+html[data-sidebar-resume-hold] {
+  visibility: hidden !important;
+}
