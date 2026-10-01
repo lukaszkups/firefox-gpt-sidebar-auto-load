@@ -4,16 +4,39 @@ Firefox’s chatbot sidebar loads `https://chatgpt.com` every time you toggle it
 
 Normal ChatGPT tabs are left alone. While the sidebar stays open, New chat still starts a fresh conversation. The next time you close the sidebar and turn it back on, the conversation you were in is loaded again.
 
-## Install in Firefox
+## Install it so it stays
 
-1. Open `about:debugging`.
-2. Click **This Firefox**.
-3. Click **Load Temporary Add-on**.
-4. Choose `manifest.json` in this folder.
+Quit Firefox, then from this folder run:
 
-Temporary add-ons stay installed until you close Firefox. To keep it permanently, zip this folder and submit it on [addons.mozilla.org](https://addons.mozilla.org/).
+```bash
+python3 scripts/install.py
+```
 
-The sidebar chatbot itself has to be turned on in Firefox: **Settings → AI Controls → Chatbot in sidebar**, with ChatGPT selected.
+On Windows:
+
+```bat
+py scripts/install.py
+```
+
+That builds `dist/chatgpt-sidebar-resume-1.0.0.xpi` and copies it into your Firefox profile, the same place Firefox keeps other add-ons. It is not a temporary add-on: it is still there after you quit.
+
+Start Firefox and check `about:addons`. If the add-on is listed as disabled, enable it.
+
+The sidebar chatbot also has to be turned on: **Settings → AI Controls → Chatbot in sidebar**, with ChatGPT selected.
+
+### Regular Firefox
+
+The usual Firefox release only runs add-ons Mozilla has signed, so it will refuse this copy. Developer Edition, Nightly, and ESR will run it. The installer turns the signature check off in your profile, which those editions honor.
+
+To use it in regular Firefox, sign your own copy (this does not publish it):
+
+1. Submit the `.xpi` from `dist/` at [addons.mozilla.org/developers](https://addons.mozilla.org/developers/) and choose **On your own**.
+2. Download the signed file Mozilla gives back.
+3. In Firefox, open `about:addons`, open the gear menu, and choose **Install Add-on From File**.
+
+That install stays after Firefox quits. To remove the sideloaded copy, run `python3 scripts/install.py --remove`.
+
+Loading `manifest.json` from `about:debugging` still works, and Firefox drops that copy when it quits. Use the installer above when you want it to remain.
 
 ## Use it
 
@@ -35,6 +58,7 @@ If reopening the sidebar still lands on a new chat, open the button menu, expand
 
 ```bash
 node test/chat-url.test.js
+python3 test/install_test.py
 ```
 
 Icons are regenerated with `python3 scripts/make-icons.py`.

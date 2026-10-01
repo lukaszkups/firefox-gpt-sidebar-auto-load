@@ -8,5 +8,6 @@ module.exports = {
     "package-lock.json",
     ".gitignore",
     "agent-tools/**",
+    "dist/**",
   ],
 };
