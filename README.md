@@ -18,7 +18,7 @@ On Windows:
 py scripts/install.py
 ```
 
-That builds `dist/chatgpt-sidebar-resume-1.0.1.xpi` and copies it into your Firefox profile, the same place Firefox keeps other add-ons. It is not a temporary add-on: it is still there after you quit.
+That builds `dist/chatgpt-sidebar-resume-1.0.2.xpi` and copies it into your Firefox profile, the same place Firefox keeps other add-ons. It is not a temporary add-on: it is still there after you quit.
 
 Start Firefox and check `about:addons`. If the add-on is listed as disabled, enable it.
 
@@ -48,12 +48,20 @@ The button shows the saved title. **Forget saved chat** clears it. **Resume last
 
 If reopening the sidebar still lands on a new chat, open the button menu, expand **Sidebar still starts a new chat?**, and enable resuming in every ChatGPT window. That also changes ordinary tabs that open a new chat.
 
+## Permissions
+
+Firefox lists these because the add-on has to run on ChatGPT’s site:
+
+- Access your data for chatgpt.com
+- Access your data for www.chatgpt.com
+- Access your data for chat.openai.com
+
+That access stays on this device. It is only used to remember which conversation to reopen. Conversation text is not read, and nothing is sent or analyzed.
+
 ## What it does not change
 
 - A prompt Firefox sends into the sidebar (for example Summarize page) still starts a new chat when the composer is filled as the page loads.
 - Choosing **New chat** inside an already open sidebar is unchanged.
-- The add-on only reads the conversation address and page title on ChatGPT. It does not read message text and it does not talk to any server of its own.
-
 ## Develop
 
 ```bash

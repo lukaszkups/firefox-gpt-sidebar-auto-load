@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
   "name": "ChatGPT Sidebar Resume",
-  "version": "1.0.1",
-  "description": "Reopens your last ChatGPT conversation whenever the Firefox sidebar is toggled on.",
+  "version": "1.0.2",
+  "description": "Reopens your last ChatGPT sidebar conversation. Site access is used only to remember that conversation on this device. Nothing is sent or analyzed.",
   "browser_specific_settings": {
     "gecko": {
       "id": "chatgpt-sidebar-resume@example.com",
