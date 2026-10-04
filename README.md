@@ -62,6 +62,7 @@ That access stays on this device. It is only used to remember which conversation
 
 - A prompt Firefox sends into the sidebar (for example Summarize page) still starts a new chat when the composer is filled as the page loads.
 - Choosing **New chat** inside an already open sidebar is unchanged.
+
 ## Develop
 
 ```bash
