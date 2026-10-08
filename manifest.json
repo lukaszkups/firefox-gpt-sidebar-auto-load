@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "ChatGPT Sidebar Resume",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Reopens your last ChatGPT sidebar conversation. Site access is used only to remember that conversation on this device. Nothing is sent or analyzed.",
   "browser_specific_settings": {
     "gecko": {
@@ -39,14 +39,14 @@
     "default_title": "ChatGPT Sidebar Resume",
     "default_popup": "popup.html",
     "default_icon": {
-      "32": "icons/icon-32.png",
-      "48": "icons/icon-48.png",
-      "96": "icons/icon-96.png"
+      "32": "icons/robot-32.png",
+      "48": "icons/robot-48.png",
+      "96": "icons/robot-96.png"
     }
   },
   "icons": {
-    "32": "icons/icon-32.png",
-    "48": "icons/icon-48.png",
-    "96": "icons/icon-96.png"
+    "32": "icons/robot-32.png",
+    "48": "icons/robot-48.png",
+    "96": "icons/robot-96.png"
   }
 }

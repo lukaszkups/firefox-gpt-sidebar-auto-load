@@ -35,9 +35,9 @@ PACKAGED = (
     "popup.css",
     "popup.js",
     "lib/chat-url.js",
-    "icons/icon-32.png",
-    "icons/icon-48.png",
-    "icons/icon-96.png",
+    "icons/robot-32.png",
+    "icons/robot-48.png",
+    "icons/robot-96.png",
 )
 
 # Release and Beta ignore xpinstall.signatures.required. These editions honor it.

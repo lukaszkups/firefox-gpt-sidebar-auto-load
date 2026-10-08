@@ -64,7 +64,7 @@ class InstallTests(unittest.TestCase):
                 names = set(archive.namelist())
             self.assertIn("manifest.json", names)
             self.assertIn("lib/chat-url.js", names)
-            self.assertIn("icons/icon-32.png", names)
+            self.assertIn("icons/robot-32.png", names)
             self.assertNotIn("README.md", names)
             self.assertNotIn("scripts/install.py", names)
 

@@ -91,7 +91,7 @@ def main():
     root = Path(__file__).resolve().parents[1] / "icons"
     root.mkdir(parents=True, exist_ok=True)
     for size in (32, 48, 96):
-        write_png(root / f"icon-{size}.png", size)
+        write_png(root / f"robot-{size}.png", size)
 
 
 if __name__ == "__main__":
