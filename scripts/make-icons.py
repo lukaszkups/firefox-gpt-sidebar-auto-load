@@ -41,7 +41,6 @@ def pixel(x, y, size):
     py = y + 0.5
     blue = (0, 96, 223, 255)
     white = (255, 255, 255, 255)
-    ink = (0, 96, 223, 255)
     color = (0, 0, 0, 0)
     margin = size * 0.04
     color = blend(
@@ -49,31 +48,29 @@ def pixel(x, y, size):
         blue,
         circle_coverage(px, py, size / 2, size / 2, size / 2 - margin),
     )
-    sidebar = round_rect_coverage(
-        px,
-        py,
-        size * 0.22,
-        size * 0.24,
-        size * 0.42,
-        size * 0.76,
-        size * 0.06,
+    # Antenna
+    color = blend(color, white, circle_coverage(px, py, size * 0.50, size * 0.18, size * 0.05))
+    color = blend(
+        color,
+        white,
+        round_rect_coverage(
+            px, py, size * 0.47, size * 0.20, size * 0.53, size * 0.34, size * 0.02
+        ),
     )
-    color = blend(color, white, sidebar)
-    bubble = circle_coverage(px, py, size * 0.66, size * 0.46, size * 0.16)
-    color = blend(color, white, bubble)
-    tail = round_rect_coverage(
-        px,
-        py,
-        size * 0.58,
-        size * 0.52,
-        size * 0.70,
-        size * 0.66,
-        size * 0.02,
+    # Head
+    color = blend(
+        color,
+        white,
+        round_rect_coverage(px, py, size * 0.22, size * 0.32, size * 0.78, size * 0.82, size * 0.14),
     )
-    color = blend(color, white, tail)
-    dot_y = size * 0.46
-    for dot_x in (size * 0.58, size * 0.66, size * 0.74):
-        color = blend(color, ink, circle_coverage(px, py, dot_x, dot_y, size * 0.025))
+    # Eyes and mouth, punched in the same blue as the background
+    color = blend(color, blue, circle_coverage(px, py, size * 0.37, size * 0.50, size * 0.07))
+    color = blend(color, blue, circle_coverage(px, py, size * 0.63, size * 0.50, size * 0.07))
+    color = blend(
+        color,
+        blue,
+        round_rect_coverage(px, py, size * 0.36, size * 0.66, size * 0.64, size * 0.72, size * 0.03),
+    )
     return color
 
 

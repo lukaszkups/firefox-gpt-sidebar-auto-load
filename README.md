@@ -18,7 +18,7 @@ On Windows:
 py scripts/install.py
 ```
 
-That builds `dist/chatgpt-sidebar-resume-1.0.2.xpi` and copies it into your Firefox profile, the same place Firefox keeps other add-ons. It is not a temporary add-on: it is still there after you quit.
+That builds `dist/chatgpt-sidebar-resume-1.0.3.xpi` and copies it into your Firefox profile, the same place Firefox keeps other add-ons. It is not a temporary add-on: it is still there after you quit.
 
 Start Firefox and check `about:addons`. If the add-on is listed as disabled, enable it.
 
